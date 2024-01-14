@@ -1,18 +1,17 @@
 import getCurrentUser from "@/actions/getCurrentUser";
 import Container from "../components/Container";
 import FormWrap from "../components/FormWrap";
-import RegisterForm from "./RegisterForm";
+import LoginForm from "./LoginForm";
 
-const Register = async () => {
+const Login = async () => {
   const currentUser = await getCurrentUser();
-
   return (
     <Container>
       <FormWrap>
-        <RegisterForm currentUser={currentUser} />
+        <LoginForm currentUser={currentUser} />
       </FormWrap>
     </Container>
   );
 };
 
-export default Register;
+export default Login;

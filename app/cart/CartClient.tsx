@@ -3,19 +3,18 @@ import { useCart } from "@/hooks/useCart";
 import Link from "next/link";
 import { MdArrowBack } from "react-icons/md";
 import Heading from "../components/Heading";
-import Button from "../components/Buttons";
+import Button from "../components/Button";
 import ItemContent from "./ItemContent";
 import { formatPrice } from "@/utils/formatPrice";
-//import { SafeUser } from "@/types";
+import { SafeUser } from "@/types";
 import { useRouter } from "next/navigation";
 
-// interface CartClientProps {
-//   currentUser: SafeUser | null;
-// }
+interface CartClientProps {
+  currentUser: SafeUser | null;
+}
 
-const CartClient = () => {
+const CartClient:React.FC<CartClientProps> = ({currentUser}) => {
   const { cartProducts, handleClearCart, cartTotalAmount } = useCart();
-
   const router = useRouter();
 
   if (!cartProducts || cartProducts.length === 0) {
@@ -82,7 +81,9 @@ const CartClient = () => {
             Taxes and shipping calculate at checkout
           </p>
           <Button
-        label="checkout" onClick={()=>{}}
+        label={currentUser? "Checkout":"Login To Checkout"}   onClick={() => {
+          currentUser ? router.push("/checkout") : router.push("/login");
+        }}
           />
           <Link
             href={"/"}

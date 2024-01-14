@@ -4,7 +4,7 @@ import { Rating } from "@mui/material";
 import { useCallback, useState, useEffect } from "react";
 import SetColour from "../components/product/SetColour";
 import SetQuantity from "../components/product/SetQuantity";
-import Button from "../components/Buttons";
+import Button from "../components/Button";
 import ProductImage from "../components/product/ProductImage";
 import { useCart } from "@/hooks/useCart";
 import { useRouter } from "next/navigation";
