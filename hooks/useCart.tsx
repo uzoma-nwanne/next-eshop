@@ -43,6 +43,7 @@ export const CartContextProvider = (props: Props) => {
 
     setCartProducts(cProducts);
     setPaymentIntent(paymentIntent);
+    
   }, []);
 
   useEffect(() => {
